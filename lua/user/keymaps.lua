@@ -24,7 +24,7 @@ keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
-keymap("n", ";", ":", opts) 
+keymap("n", ";", ":", opts)
 keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 
 -- Resize with arrows
@@ -43,7 +43,7 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 -- Insert --
 -- Press jk fast to enter
-keymap("i", "jk", "<ESC>", opts)
+-- keymap("i", "jk", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode
@@ -72,3 +72,14 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 -- keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+
+-- Colmak
+keymap("n", "e", "j", opts) -- Up 
+keymap("n", "u", "k", opts) -- Down 
+keymap("n", "n", "h", opts) -- Left 
+keymap("n", "i", "l", opts) -- Right 
+keymap("n", "k", "e", opts) -- Jump frwrds to end of the word
+keymap("n", "h", "i", opts) -- Insert 
+keymap("n", "H", "I", opts) -- Shift-Insert 
+keymap("n", "l", "u", opts) -- Undo
+keymap("n", "L", "U", opts) -- Undo Restore
