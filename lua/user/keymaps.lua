@@ -1,5 +1,5 @@
 local opts = { noremap = true, silent = true }
-
+local enabledColemak = false
 local term_opts = { silent = true }
 
 -- Shorten function name
@@ -36,6 +36,7 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
+  
 
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
@@ -73,13 +74,16 @@ keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 -- keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 
--- Colmak
-keymap("n", "e", "j", opts) -- Up 
-keymap("n", "u", "k", opts) -- Down 
-keymap("n", "n", "h", opts) -- Left 
-keymap("n", "i", "l", opts) -- Right 
-keymap("n", "k", "e", opts) -- Jump frwrds to end of the word
-keymap("n", "h", "i", opts) -- Insert 
-keymap("n", "H", "I", opts) -- Shift-Insert 
-keymap("n", "l", "u", opts) -- Undo
-keymap("n", "L", "U", opts) -- Undo Restore
+if enabledColemak then
+  -- Colmak
+  keymap("n", "e", "j", opts) -- Up 
+  keymap("n", "u", "k", opts) -- Down 
+  keymap("n", "n", "h", opts) -- Left 
+  keymap("n", "i", "l", opts) -- Right 
+  keymap("n", "k", "e", opts) -- Jump frwrds to end of the word
+  keymap("n", "h", "i", opts) -- Insert 
+  keymap("n", "H", "I", opts) -- Shift-Insert 
+  keymap("n", "l", "u", opts) -- Undo
+  keymap("n", "L", "U", opts) -- Undo Restore 
+end
+
