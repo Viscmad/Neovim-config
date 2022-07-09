@@ -85,3 +85,5 @@ if enabledColemak then
   keymap("n", "L", "U", opts) -- Undo Restore 
 end
 
+-- Nvimtree
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
